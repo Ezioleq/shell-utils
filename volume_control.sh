@@ -1,6 +1,6 @@
 #!/bin/bash
 
-amixer set Master $1
+pactl set-sink-volume 0 $1
 
 CURRENT=$(amixer sget Master | awk -F"[][]" '/Left:/ { print $2 }')
 
